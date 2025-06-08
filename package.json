@@ -23,6 +23,9 @@
 		"vite": "^6.2.6"
 	},
 	"dependencies": {
-		"lucide-svelte": "^0.513.0"
+		"bcrypt-ts": "^7.1.0",
+		"dotenv": "^16.5.0",
+		"lucide-svelte": "^0.513.0",
+		"mongodb": "^6.17.0"
 	}
 }

@@ -15,7 +15,8 @@
         <a class="hover:opacity-70 border-2 p-2 rounded-md m-5 text-white" href="/transactions">Transactions</a>
         <User onclick={toggleCollapsingAccount} size={32} color="white" class="hover:scale-110 cursor-pointer ml-auto mr-5"/>
     </nav>
-        <div style="{collapsed}" class="flex flex-col text-center bg-white ml-auto mt-4 mr-5  rounded-md">
+        <div style="{collapsed}" class="flex flex-col text-center bg-white p-5 ml-auto mt-3 mr-5  rounded-md">
+            <h3 class="mb-5">John Doe</h3>
             <a class="m-5" href="/profile">Profile</a>
             <a class="m-5" href="/settings">Settings</a>
             <a class="m-5" href="/logout">Logout</a>

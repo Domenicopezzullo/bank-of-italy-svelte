@@ -1,5 +1,9 @@
 <script lang="ts">
+    import type { Transaction } from "$lib/utils"; 
     import { goto } from "$app/navigation";
+    import { error } from "@sveltejs/kit";
+    import { hash, genSalt } from "bcrypt-ts";
+
     let username = $state("");
     let password = $state("");
     let error_message = $state("");
@@ -16,7 +20,7 @@
     }
 
 
-    function onSubmit(e: Event) {
+    async function onSubmit(e: Event) {
         e.preventDefault()
 
         error_message = "";
@@ -34,7 +38,23 @@
         }
 
         if (error_message === "") {
-            // TODO: implement registration logic 
+            let salt = await genSalt(10);
+            hash(password, salt).then(async (hash) => {
+                let response = await fetch("/api/register", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        username: username,
+                        hashedPassword: hash,
+                        balance: 100,
+                        transactions: [] as Transaction[]
+                    })
+                })
+                if (response.status === 200) {
+                    goto("/login");
+                } else {
+                    error_message = "Username already exists.";
+                }
+            });
         }  
     }
 
