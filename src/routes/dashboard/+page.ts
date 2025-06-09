@@ -7,7 +7,7 @@ export function load() {
 	const storedUser = localStorage.getItem('currentUser');
 
 	if (!storedUser) {
-		throw error(404, 'User not found');
+		throw error(404, "You're not logged in, please log in.");
 	}
 
 	try {

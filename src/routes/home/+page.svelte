@@ -1,5 +1,9 @@
 <script lang="ts">
     import { goto } from "$app/navigation";
+    import { browser } from "$app/environment";
+    if (browser && localStorage.getItem("currentUser")) {
+        goto("/dashboard");
+    }
 </script>
 
 <div class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 flex flex-col justify-center items-center h-screen">
