@@ -3,7 +3,6 @@ import { json } from '@sveltejs/kit';
 import { mongoClient } from '$lib/db';
 import { compare } from 'bcrypt-ts';
 import type { RequestHandler } from './$types';
-import type { User } from '$lib/utils';
 
 export const POST: RequestHandler = async ({ request }) => {
     try {

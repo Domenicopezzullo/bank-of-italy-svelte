@@ -57,7 +57,7 @@
         <input bind:value={username} id="login-username" class="border-2 rounded-md {color_user} outline-0 p-1 text-white" type="text">
         <label for="login-password" class="text-white">Password</label>
         <input bind:value={password} id="login-password" type="password" class="border-2 {color_pass} outline-0 rounded-md p-1 text-white mb-5">
-        <button class="cursor-pointer border-2 border-white outline-0  text-white rounded-md p-1 mt-2 hover:opacity-70">Login</button>
+        <button class="cursor-pointer border-2 border-white  text-white rounded-md p-1 mt-2 hover:opacity-70">Login</button>
         <h4 class="text-white">{error_message}</h4>
     </form>
 </div>
